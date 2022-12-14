@@ -123,7 +123,7 @@ export default class AdminController extends Controller {
 				}
 
 				if (day != null){
-					if (typeof day == 'number' && day <= 7 && day >= 1){
+					if (typeof day == 'number' && day <= 5 && day >= 1){
 						bus.day = day
 						ctx.body = {
 							success: true
@@ -132,13 +132,13 @@ export default class AdminController extends Controller {
 					else{
 						ctx.body = {
 							success: false,
-							error: 'day参数类型错误或超出范围(1-7)'
+							error: 'day参数类型错误或超出范围(1-5)'
 						}
 						return
 					}
 				}
 				if (time != null){
-					if (typeof time == 'number' && time <= 5 && time >= 1){
+					if (typeof time == 'number' && time <= 3 && time >= 1){
 						bus.time = time
 						ctx.body = {
 							success: true
@@ -147,7 +147,7 @@ export default class AdminController extends Controller {
 					else{ 
 						ctx.body = {
 							success: false,
-							error: 'time参数类型错误或超出范围（1-5）'
+							error: 'time参数类型错误或超出范围（1-3）'
 						}
 						return
 					}
